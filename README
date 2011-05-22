@@ -1,6 +1,8 @@
 --------------
- - watchmac - 
+ - WatchMB - 
 --------------
+
+Watch MacBook:
 
 A simple script to capture information about your MacBook (or OSX something).
 Use it to keep a historical picture book of yourself. Use it to track where
@@ -28,16 +30,16 @@ snapshots.
 I've set mine up thusly, so that I have access to the files even if I'm not in
 front of it (by going to dropbox.com):
 
-1. Install DropBox. Create the folder 'watchmac' in the 'Photos' folder.
+1. Install DropBox. Create the folder 'WatchMB' in the 'Photos' folder.
 2. Put this program's folder into my home directory: run Terminal and paste the following:
 
-git ...
+git clone git://github.com/dsummersl/WatchMB.git
 
 3. Copy/paste the following commands into the Terminal window to setup the
    script to run every half hour:
 
 crontab -l | grep -v photo.sh > oldcrontab 
-(cat oldcrontab ; echo "0,30 * * * * ~/watchmac/photo.sh &> /dev/null") > newcrontab
+(cat oldcrontab ; echo "0,30 * * * * ~/WatchMB/photo.sh &> /dev/null") > newcrontab
 crontab newcrontab
 rm oldcrontab
 rm newcrontab
